@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tlT-vm-GV7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="TableViewReloadAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="136" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="enM-tl-VDa">
+                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="136" id="hPC-32-LZh" customClass="CustomCell" customModule="TableViewReloadAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hPC-32-LZh" id="jv6-cV-Sxn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="btf-ac-iEG">
+                                                    <rect key="frame" x="10" y="10" width="355" height="115.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="1024x1024" translatesAutoresizingMaskIntoConstraints="NO" id="irM-xm-c1A">
+                                                            <rect key="frame" x="0.0" y="33" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="KDG-Ao-P4q"/>
+                                                                <constraint firstAttribute="width" constant="50" id="o1y-dR-Q0k"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-RF-ITd">
+                                                            <rect key="frame" x="60" y="47.5" width="295" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="btf-ac-iEG" secondAttribute="trailing" constant="10" id="9WA-eD-Ben"/>
+                                                <constraint firstItem="btf-ac-iEG" firstAttribute="top" secondItem="jv6-cV-Sxn" secondAttribute="top" constant="10" id="aOk-8I-bKa"/>
+                                                <constraint firstItem="btf-ac-iEG" firstAttribute="leading" secondItem="jv6-cV-Sxn" secondAttribute="leading" constant="10" id="jF2-sY-qNm"/>
+                                                <constraint firstAttribute="bottom" secondItem="btf-ac-iEG" secondAttribute="bottom" constant="10" id="otd-JC-tvl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-Q2-fEi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="46"/>
+                                <subviews>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-WH-PLR">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1P-O2-sYX">
+                                                <rect key="frame" x="0.0" y="0.0" width="71" height="46"/>
+                                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Left"/>
+                                                <connections>
+                                                    <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UeJ-Ux-kQr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-Mj-CFw">
+                                                <rect key="frame" x="76" y="0.0" width="71" height="46"/>
+                                                <state key="normal" title="Top"/>
+                                                <connections>
+                                                    <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="meJ-FK-71Z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExU-dQ-9mk">
+                                                <rect key="frame" x="152" y="0.0" width="71" height="46"/>
+                                                <state key="normal" title="Right"/>
+                                                <connections>
+                                                    <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hmV-vW-EO5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz3-iD-JDw">
+                                                <rect key="frame" x="228" y="0.0" width="71" height="46"/>
+                                                <state key="normal" title="Bottom"/>
+                                                <connections>
+                                                    <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rzD-I0-TFe"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hr2-Ie-bq0">
+                                                <rect key="frame" x="304" y="0.0" width="71" height="46"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MkG-bP-Z8U">
+                                                        <rect key="frame" x="0.0" y="7.5" width="71" height="31"/>
+                                                        <subviews>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TPk-1Q-4SH">
+                                                                <rect key="frame" x="11" y="0.0" width="51" height="31"/>
+                                                                <connections>
+                                                                    <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="H2V-4h-LGE"/>
+                                                                </connections>
+                                                            </switch>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="eal-pW-8oz"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="enM-tl-VDa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" priority="999" id="0fa-Y2-Fed"/>
+                            <constraint firstItem="enM-tl-VDa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="24F-c2-dow"/>
+                            <constraint firstItem="enM-tl-VDa" firstAttribute="top" secondItem="g7f-Q2-fEi" secondAttribute="bottom" id="S9K-Ld-WKG"/>
+                            <constraint firstItem="g7f-Q2-fEi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vaj-if-fzD"/>
+                            <constraint firstItem="g7f-Q2-fEi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Y4l-KM-9tN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="enM-tl-VDa" secondAttribute="bottom" id="nlz-JI-LeX"/>
+                            <constraint firstAttribute="trailing" secondItem="enM-tl-VDa" secondAttribute="trailing" id="qpV-Vt-UWw"/>
+                            <constraint firstAttribute="trailing" secondItem="g7f-Q2-fEi" secondAttribute="trailing" id="wIn-sc-Mds"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bCI-5t-xrm">
+                        <leftBarButtonItems>
+                            <barButtonItem title="anim1" id="62B-tx-5xJ">
+                                <connections>
+                                    <action selector="anim1:" destination="BYZ-38-t0r" id="fQH-rn-bSA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="anim2" id="lBz-oi-dpR">
+                                <connections>
+                                    <action selector="anim2:" destination="BYZ-38-t0r" id="dcd-hC-pQW"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="spring1" id="coI-z1-QVd">
+                                <connections>
+                                    <action selector="spring1:" destination="BYZ-38-t0r" id="kx3-cd-VcQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="spring2" id="EBg-iF-loh">
+                                <connections>
+                                    <action selector="spring2:" destination="BYZ-38-t0r" id="hjX-sd-vwc"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Direction" id="mlD-wJ-o5s">
+                            <connections>
+                                <action selector="showHideDirectionStackView:" destination="BYZ-38-t0r" id="mhi-3v-dIU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cellsOrderSwitch" destination="TPk-1Q-4SH" id="d7q-Gp-7bj"/>
+                        <outlet property="directionStackView" destination="NO0-WH-PLR" id="PAN-a8-3TY"/>
+                        <outlet property="tableView" destination="enM-tl-VDa" id="uJY-Lo-EeR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mO7-lj-Grr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tlT-vm-GV7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CbY-Gd-tpw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rO5-CX-7r3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oYr-NO-91K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1024x1024" width="1024" height="1024"/>
+    </resources>
+</document>
