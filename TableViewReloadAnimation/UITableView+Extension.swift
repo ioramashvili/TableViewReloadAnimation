@@ -58,7 +58,10 @@ extension UITableView {
         case top(useCellsFrame: Bool)
         case right(useCellsFrame: Bool)
         case bottom(useCellsFrame: Bool)
+        case rotation(angle: Double)
         
+        
+        // For testing only
         init?(rawValue: Int, useCellsFrame: Bool) {
             switch rawValue {
             case 0:
@@ -69,6 +72,8 @@ extension UITableView {
                 self = Direction.right(useCellsFrame: useCellsFrame)
             case 3:
                 self = Direction.bottom(useCellsFrame: useCellsFrame)
+            case 4:
+                self = Direction.rotation(angle: Double.pi / 2)
             default:
                 return nil
             }
@@ -85,6 +90,8 @@ extension UITableView {
                 cell.frame.origin.x -= useCellsFrame ? cell.frame.width : tableView.frame.width
             case .bottom(let useCellsFrame):
                 cell.frame.origin.y -= useCellsFrame ? cell.frame.height : tableView.frame.height
+            case .rotation(let angle):
+                cell.transform = CGAffineTransform(rotationAngle: -CGFloat(angle))
             }
         }
         
@@ -99,6 +106,8 @@ extension UITableView {
                 cell.frame.origin.x += useCellsFrame ? cell.frame.width : tableView.frame.width
             case .bottom(let useCellsFrame):
                 cell.frame.origin.y += useCellsFrame ? cell.frame.height : tableView.frame.height
+            case .rotation(_):
+                cell.transform = .identity
             }
         }
         

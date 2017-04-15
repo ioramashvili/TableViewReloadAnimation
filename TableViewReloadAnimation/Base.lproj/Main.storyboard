@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="110" width="375" height="557"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="136" id="hPC-32-LZh" customClass="CustomCell" customModule="TableViewReloadAnimation" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="136" id="hPC-32-LZh" customClass="CustomCell" customModule="TableViewReloadAnimation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hPC-32-LZh" id="jv6-cV-Sxn">
@@ -69,7 +69,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1P-O2-sYX">
-                                                <rect key="frame" x="0.0" y="0.0" width="71" height="46"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="46"/>
                                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Left"/>
                                                 <connections>
@@ -77,34 +77,41 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-Mj-CFw">
-                                                <rect key="frame" x="76" y="0.0" width="71" height="46"/>
+                                                <rect key="frame" x="63.5" y="0.0" width="58" height="46"/>
                                                 <state key="normal" title="Top"/>
                                                 <connections>
                                                     <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="meJ-FK-71Z"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExU-dQ-9mk">
-                                                <rect key="frame" x="152" y="0.0" width="71" height="46"/>
+                                                <rect key="frame" x="126.5" y="0.0" width="58.5" height="46"/>
                                                 <state key="normal" title="Right"/>
                                                 <connections>
                                                     <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hmV-vW-EO5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz3-iD-JDw">
-                                                <rect key="frame" x="228" y="0.0" width="71" height="46"/>
+                                                <rect key="frame" x="190" y="0.0" width="58.5" height="46"/>
                                                 <state key="normal" title="Bottom"/>
                                                 <connections>
                                                     <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rzD-I0-TFe"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT8-Wn-9gS">
+                                                <rect key="frame" x="253.5" y="0.0" width="58" height="46"/>
+                                                <state key="normal" title="Rotate"/>
+                                                <connections>
+                                                    <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQ8-cD-b3N"/>
+                                                </connections>
+                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hr2-Ie-bq0">
-                                                <rect key="frame" x="304" y="0.0" width="71" height="46"/>
+                                                <rect key="frame" x="316.5" y="0.0" width="58.5" height="46"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MkG-bP-Z8U">
-                                                        <rect key="frame" x="0.0" y="7.5" width="71" height="31"/>
+                                                        <rect key="frame" x="0.0" y="7.5" width="58.5" height="31"/>
                                                         <subviews>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TPk-1Q-4SH">
-                                                                <rect key="frame" x="11" y="0.0" width="51" height="31"/>
+                                                                <rect key="frame" x="5" y="0.0" width="51" height="31"/>
                                                                 <connections>
                                                                     <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="H2V-4h-LGE"/>
                                                                 </connections>
@@ -115,7 +122,7 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="eal-pW-8oz"/>
+                                            <constraint firstAttribute="height" constant="46" id="8Sm-C8-RhH"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>

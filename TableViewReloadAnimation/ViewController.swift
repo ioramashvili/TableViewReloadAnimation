@@ -55,11 +55,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func spring1(_ sender: Any) {
-        tableView.reloadData(with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: selectedDirection1, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
+        tableView.reloadData(with: .spring(duration: 0.45, damping: 0.75, velocity: 1, direction: selectedDirection1, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
     }
     
     @IBAction func spring2(_ sender: Any) {
-        tableView.reloadData(with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: selectedDirection2, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
+        tableView.reloadData(with: .spring(duration: 0.45, damping: 0.75, velocity: 1, direction: selectedDirection2, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
     }
 }
 
