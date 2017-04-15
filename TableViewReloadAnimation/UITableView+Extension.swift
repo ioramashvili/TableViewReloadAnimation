@@ -4,34 +4,52 @@ import UIKit
 extension UITableView {
     
     enum AnimationType {
-        case frame(duration: TimeInterval, isSpring: Bool, direction: Direction, constantDelay: TimeInterval)
+        case simple(duration: TimeInterval, direction: Direction, constantDelay: TimeInterval)
+        case spring(duration: TimeInterval, damping: CGFloat, velocity: CGFloat, direction: Direction, constantDelay: TimeInterval)
         
         func animate(tableView: UITableView, reversed: Bool = false, completion: (() -> Void)? = nil) {
+            var duration: TimeInterval!
+            var damping: CGFloat = 1
+            var velocity: CGFloat = 0
+            var constantDelay: TimeInterval!
+            var direction: Direction!
+            
             switch self {
-            case .frame(let duration, let isSpring, let direction, let constantDelay):
-                let visibleCells = tableView.visibleCells
-                let visibleCellsCount = Double(visibleCells.count)
-                
-                let cells = direction.reverse(for: reversed ? visibleCells.reversed() : visibleCells)
-                cells.enumerated().forEach { item in
-                    let delay: TimeInterval = duration / visibleCellsCount * Double(item.offset) + Double(item.offset) * constantDelay
-                    direction.startValues(tableView: tableView, for: item.element)
-                    
-                    UIView.animate(
-                        withDuration: duration,
-                        delay: delay,
-                        usingSpringWithDamping: isSpring ? 0.65 : 1,
-                        initialSpringVelocity: isSpring ? 1 : 0,
-                        options: .curveEaseInOut, 
-                        animations: {
-                        direction.endValues(tableView: tableView, for: item.element)
-                    }, completion: { finished in
-                        completion?()
-                    })
-                    
-                    print(duration, delay)
-                }
+            case .simple(let _duration, let _direction, let _constantDelay):
+                duration = _duration
+                direction = _direction
+                constantDelay = _constantDelay
+            case .spring(let _duration, let _damping, let _velocity, let _direction, let _constantDelay):
+                duration = _duration
+                damping = _damping
+                velocity = _velocity
+                direction = _direction
+                constantDelay = _constantDelay
             }
+            
+            let visibleCells = tableView.visibleCells
+            let visibleCellsCount = Double(visibleCells.count)
+            
+            let cells = direction.reverse(for: reversed ? visibleCells.reversed() : visibleCells)
+            cells.enumerated().forEach { item in
+                let delay: TimeInterval = duration / visibleCellsCount * Double(item.offset) + Double(item.offset) * constantDelay
+                direction.startValues(tableView: tableView, for: item.element)
+                
+                UIView.animate(
+                    withDuration: duration,
+                    delay: delay,
+                    usingSpringWithDamping: damping,
+                    initialSpringVelocity: velocity,
+                    options: .curveEaseInOut,
+                    animations: {
+                        direction.endValues(tableView: tableView, for: item.element)
+                }, completion: { finished in
+                    completion?()
+                })
+                
+                print(duration, delay)
+            }
+
         }
     }
     

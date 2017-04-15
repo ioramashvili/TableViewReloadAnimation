@@ -47,19 +47,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func anim1(_ sender: Any) {
-        tableView.reloadData(with: .frame(duration: 0.45, isSpring: false, direction: selectedDirection1, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
+        tableView.reloadData(with: .simple(duration: 0.45, direction: selectedDirection1, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
     }
     
     @IBAction func anim2(_ sender: Any) {
-        tableView.reloadData(with: .frame(duration: 0.45, isSpring: false, direction: selectedDirection2, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
+        tableView.reloadData(with: .simple(duration: 0.45, direction: selectedDirection2, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
     }
     
     @IBAction func spring1(_ sender: Any) {
-        tableView.reloadData(with: .frame(duration: 0.45, isSpring: true, direction: selectedDirection1, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
+        tableView.reloadData(with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: selectedDirection1, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
     }
     
     @IBAction func spring2(_ sender: Any) {
-        tableView.reloadData(with: .frame(duration: 0.45, isSpring: true, direction: selectedDirection2, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
+        tableView.reloadData(with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: selectedDirection2, constantDelay: 0), reversed: !cellsOrderSwitch.isOn)
     }
 }
 
