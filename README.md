@@ -31,4 +31,7 @@ tableView.reloadData(with: .simple(duration: 0.45, direction: .left(useCellsFram
 
 // spring animation
 tableView.reloadData(with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: .left(useCellsFrame: false), constantDelay: 0))
+
+// rotation
+tableView.reloadData(with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: .rotation(angle: Double.pi / 2), constantDelay: 0))
 ```
