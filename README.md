@@ -31,7 +31,7 @@
 <th>.rotation3D(type: .deadpool)</th>
 </tr>
 <tr>
-<td><img src="gifs/captainMarvel.gif"/></td>
+<td><img src="gifs/capitanMarvel.gif"/></td>
 <td><img src="gifs/doctorStrange.gif"/></td>
 <td><img src="gifs/daredevil.gif"/></td>
 <td><img src="gifs/deadpool.gif"/></td>
