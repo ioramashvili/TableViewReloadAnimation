@@ -3,11 +3,13 @@ import UIKit
 
 extension UITableView {
     
+    typealias Complition = (() -> Void)
+    
     enum AnimationType {
         case simple(duration: TimeInterval, direction: Direction, constantDelay: TimeInterval)
         case spring(duration: TimeInterval, damping: CGFloat, velocity: CGFloat, direction: Direction, constantDelay: TimeInterval)
         
-        func animate(tableView: UITableView, reversed: Bool = false, completion: (() -> Void)? = nil) {
+        func animate(tableView: UITableView, reversed: Bool = false, completion: Complition? = nil) {
             var duration: TimeInterval!
             var damping: CGFloat = 1
             var velocity: CGFloat = 0
@@ -121,8 +123,8 @@ extension UITableView {
         }
     }
     
-    func reloadData(with animation: AnimationType, reversed: Bool = false) {
+    func reloadData(with animation: AnimationType, reversed: Bool = false, completion: Complition? = nil) {
         reloadData()
-        animation.animate(tableView: self, reversed: reversed)
+        animation.animate(tableView: self, reversed: reversed, completion: completion)
     }
 }
