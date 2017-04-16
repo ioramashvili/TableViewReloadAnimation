@@ -36,6 +36,7 @@ extension UITableView {
             cells.enumerated().forEach { item in
                 let delay: TimeInterval = duration / visibleCellsCount * Double(item.offset) + Double(item.offset) * constantDelay
                 direction.startValues(tableView: tableView, for: item.element)
+                let anchor = item.element.layer.anchorPoint
                 
                 UIView.animate(
                     withDuration: duration,
@@ -46,6 +47,7 @@ extension UITableView {
                     animations: {
                         direction.endValues(tableView: tableView, for: item.element)
                 }, completion: { finished in
+                    item.element.layer.anchorPoint = anchor
                     completion?()
                 })
                 
@@ -61,6 +63,7 @@ extension UITableView {
         case right(useCellsFrame: Bool)
         case bottom(useCellsFrame: Bool)
         case rotation(angle: Double)
+        case rotation3D(type: TransformType)
         
         
         // For testing only
@@ -75,7 +78,7 @@ extension UITableView {
             case 3:
                 self = Direction.bottom(useCellsFrame: useCellsFrame)
             case 4:
-                self = Direction.rotation(angle: Double.pi / 2)
+                self = Direction.rotation(angle: -Double.pi / 2)
             default:
                 return nil
             }
@@ -93,7 +96,9 @@ extension UITableView {
             case .bottom(let useCellsFrame):
                 cell.frame.origin.y -= useCellsFrame ? cell.frame.height : tableView.frame.height
             case .rotation(let angle):
-                cell.transform = CGAffineTransform(rotationAngle: -CGFloat(angle))
+                cell.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+            case .rotation3D(let type):
+                type.set(for: cell)
             }
         }
         
@@ -110,6 +115,8 @@ extension UITableView {
                 cell.frame.origin.y += useCellsFrame ? cell.frame.height : tableView.frame.height
             case .rotation(_):
                 cell.transform = .identity
+            case .rotation3D(_):
+                cell.layer.transform = CATransform3DIdentity
             }
         }
         
@@ -121,6 +128,53 @@ extension UITableView {
                 return cells
             }
         }
+        
+        enum TransformType {
+            case ironMan
+            case thor
+            case spiderMan
+            case captainMarvel
+            case hulk
+            case daredevil
+            case deadpool
+            case doctorStrange
+            
+            func set(for cell: UITableViewCell) {
+                let oldFrame = cell.frame
+                var transform = CATransform3DIdentity
+                transform.m34 = 1.0 / -500
+                
+                switch self {
+                case .ironMan:
+                    cell.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                    transform = CATransform3DRotate(transform, CGFloat(Double.pi / 2), 0, 1, 0)
+                case .thor:
+                    cell.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                    transform = CATransform3DRotate(transform, -CGFloat(Double.pi / 2), 0, 1, 0)
+                case .spiderMan:
+                    cell.layer.anchorPoint = .zero
+                    transform = CATransform3DRotate(transform, CGFloat(Double.pi / 2), 0, 1, 1)
+                case .captainMarvel:
+                    cell.layer.anchorPoint = CGPoint(x: 1, y: 1)
+                    transform = CATransform3DRotate(transform, -CGFloat(Double.pi / 2), 1, 1, 1)
+                case .hulk:
+                    cell.layer.anchorPoint = CGPoint(x: 1, y: 1)
+                    transform = CATransform3DRotate(transform, CGFloat(Double.pi / 2), 1, 1, 1)
+                case .daredevil:
+                    cell.layer.anchorPoint = CGPoint(x: 1, y: 0.5)
+                    transform = CATransform3DRotate(transform, CGFloat(Double.pi / 2), 0, 1, 0)
+                case .deadpool:
+                    cell.layer.anchorPoint = CGPoint(x: 1, y: 0.5)
+                    transform = CATransform3DRotate(transform, CGFloat(Double.pi / 2), 1, 0, 1)
+                case .doctorStrange:
+                    cell.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
+                    transform = CATransform3DRotate(transform, -CGFloat(Double.pi / 2), 1, 0, 0)
+                }
+                
+                cell.frame = oldFrame
+                cell.layer.transform = transform
+            }
+        }
     }
     
     func reloadData(with animation: AnimationType, reversed: Bool = false, completion: Complition? = nil) {
@@ -128,3 +182,7 @@ extension UITableView {
         animation.animate(tableView: self, reversed: reversed, completion: completion)
     }
 }
+
+
+
+

@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="136" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="enM-tl-VDa">
-                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="136" id="hPC-32-LZh" customClass="CustomCell" customModule="TableViewReloadAnimation" customModuleProvider="target">
@@ -43,9 +43,9 @@
                                                                 <constraint firstAttribute="width" constant="50" id="o1y-dR-Q0k"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-RF-ITd">
-                                                            <rect key="frame" x="60" y="47.5" width="295" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-RF-ITd">
+                                                            <rect key="frame" x="60" y="58" width="295" height="0.0"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -63,55 +63,55 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-Q2-fEi">
-                                <rect key="frame" x="0.0" y="64" width="375" height="46"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="0.0"/>
                                 <subviews>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-WH-PLR">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-WH-PLR">
+                                        <rect key="frame" x="0.0" y="-64" width="331" height="0.0"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1P-O2-sYX">
-                                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="46"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1P-O2-sYX">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="0.0"/>
                                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Left"/>
                                                 <connections>
                                                     <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UeJ-Ux-kQr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-Mj-CFw">
-                                                <rect key="frame" x="63.5" y="0.0" width="58" height="46"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-Mj-CFw">
+                                                <rect key="frame" x="56" y="0.0" width="51" height="0.0"/>
                                                 <state key="normal" title="Top"/>
                                                 <connections>
                                                     <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="meJ-FK-71Z"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExU-dQ-9mk">
-                                                <rect key="frame" x="126.5" y="0.0" width="58.5" height="46"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExU-dQ-9mk">
+                                                <rect key="frame" x="112" y="0.0" width="51" height="0.0"/>
                                                 <state key="normal" title="Right"/>
                                                 <connections>
                                                     <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hmV-vW-EO5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz3-iD-JDw">
-                                                <rect key="frame" x="190" y="0.0" width="58.5" height="46"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz3-iD-JDw">
+                                                <rect key="frame" x="168" y="0.0" width="51" height="0.0"/>
                                                 <state key="normal" title="Bottom"/>
                                                 <connections>
                                                     <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rzD-I0-TFe"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT8-Wn-9gS">
-                                                <rect key="frame" x="253.5" y="0.0" width="58" height="46"/>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT8-Wn-9gS">
+                                                <rect key="frame" x="224" y="0.0" width="51" height="0.0"/>
                                                 <state key="normal" title="Rotate"/>
                                                 <connections>
                                                     <action selector="selectDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQ8-cD-b3N"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hr2-Ie-bq0">
-                                                <rect key="frame" x="316.5" y="0.0" width="58.5" height="46"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hr2-Ie-bq0">
+                                                <rect key="frame" x="280" y="0.0" width="51" height="0.0"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MkG-bP-Z8U">
-                                                        <rect key="frame" x="0.0" y="7.5" width="58.5" height="31"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MkG-bP-Z8U">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="0.0"/>
                                                         <subviews>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TPk-1Q-4SH">
-                                                                <rect key="frame" x="5" y="0.0" width="51" height="31"/>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TPk-1Q-4SH">
+                                                                <rect key="frame" x="1" y="0.0" width="51" height="0.0"/>
                                                                 <connections>
                                                                     <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="H2V-4h-LGE"/>
                                                                 </connections>
