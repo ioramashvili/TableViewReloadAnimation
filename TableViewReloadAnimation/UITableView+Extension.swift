@@ -1,13 +1,13 @@
 import Foundation
 import UIKit
 
-extension UITableView {
+public extension UITableView {
     
     typealias Complition = (() -> Void)
     typealias HeaderFooterTuple = (header: UIView?, footer: UIView?)
     typealias VisibleHeaderFooter = [Int: HeaderFooterTuple]
     
-    enum AnimationType {
+    public enum AnimationType {
         case simple(duration: TimeInterval, direction: Direction, constantDelay: TimeInterval)
         case spring(duration: TimeInterval, damping: CGFloat, velocity: CGFloat, direction: Direction, constantDelay: TimeInterval)
         
@@ -79,7 +79,7 @@ extension UITableView {
         }
     }
     
-    enum Direction {
+    public enum Direction {
         case left(useCellsFrame: Bool)
         case top(useCellsFrame: Bool)
         case right(useCellsFrame: Bool)
@@ -150,7 +150,7 @@ extension UITableView {
             }
         }
         
-        enum TransformType {
+        public enum TransformType {
             case ironMan
             case thor
             case spiderMan
@@ -198,7 +198,7 @@ extension UITableView {
         }
     }
     
-    func reloadData(with animation: AnimationType, reversed: Bool = false, completion: Complition? = nil) {
+    public func reloadData(with animation: AnimationType, reversed: Bool = false, completion: Complition? = nil) {
         reloadData()
         animation.animate(tableView: self, reversed: reversed, completion: completion)
     }
