@@ -15,15 +15,26 @@
 </tr>
 <tr>
 <th>rotate</th>
-<th></th>
-<th></th>
-<th></th>
+<th>.rotation3D(type: .ironMan)</th>
+<th>.rotation3D(type: .thor)</th>
+<th>.rotation3D(type: .spiderMan)</th>
 </tr>
 <tr>
 <td><img src="gifs/rotate.gif"/></td>
-<td></td>
-<td></td>
-<td></td>
+<td><img src="gifs/ironMan.gif"/></td>
+<td><img src="gifs/thor.gif"/></td>
+<td><img src="gifs/spiderMan.gif"/></td>
+<tr>
+<th>.rotation3D(type: .captainMarvel)</th>
+<th>.rotation3D(type: .doctorStrange)</th>
+<th>.rotation3D(type: .daredevil)</th>
+<th>.rotation3D(type: .deadpool)</th>
+</tr>
+<tr>
+<td><img src="gifs/capitanMarvel.gif"/></td>
+<td><img src="gifs/doctorStrange.gif"/></td>
+<td><img src="gifs/daredevil.gif"/></td>
+<td><img src="gifs/deadpool.gif"/></td>
 </tr>
 </table>
 
@@ -39,11 +50,22 @@ Download project and play
 
 ```swift
 // left animation
-tableView.reloadData(with: .simple(duration: 0.45, direction: .left(useCellsFrame: true), constantDelay: 0))
+tableView.reloadData(
+    with: .simple(duration: 0.45, direction: .left(useCellsFrame: true),
+    constantDelay: 0))
 
 // right spring animation
-tableView.reloadData(with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: .right(useCellsFrame: false), constantDelay: 0))
+tableView.reloadData(
+    with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: .right(useCellsFrame: false),
+    constantDelay: 0))
 
 // rotation spting animation
-tableView.reloadData(with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: .rotation(angle: Double.pi / 2), constantDelay: 0))
+tableView.reloadData(
+    with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: .rotation(angle: Double.pi / 2),
+    constantDelay: 0))
+
+// rotation 3d
+tableView.reloadData(
+    with: .simple(duration: 0.75, direction: .rotation3D(type: .ironMan),
+    constantDelay: 0))
 ```
