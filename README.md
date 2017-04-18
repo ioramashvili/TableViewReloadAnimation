@@ -73,17 +73,22 @@ $ pod install
 ## Usage
 
 ```swift
+import TableViewReloadAnimation
+
+```
+
+```swift
 // left animation
 tableView.reloadData(
     with: .simple(duration: 0.45, direction: .left(useCellsFrame: true),
     constantDelay: 0))
 
-// right spring animation
+// right with spring
 tableView.reloadData(
     with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: .right(useCellsFrame: false),
     constantDelay: 0))
 
-// rotation spting animation
+// rotation with spring
 tableView.reloadData(
     with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: .rotation(angle: Double.pi / 2),
     constantDelay: 0))
