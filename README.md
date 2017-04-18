@@ -14,13 +14,13 @@
 <td><img src="gifs/bottom.gif"/></td>
 </tr>
 <tr>
-<th>rotate</th>
+<th>with header and footer</th>
 <th>.rotation3D(type: .ironMan)</th>
 <th>.rotation3D(type: .thor)</th>
 <th>.rotation3D(type: .spiderMan)</th>
 </tr>
 <tr>
-<td><img src="gifs/rotate.gif"/></td>
+<td><img src="gifs/headerFooter.gif"/></td>
 <td><img src="gifs/ironMan.gif"/></td>
 <td><img src="gifs/thor.gif"/></td>
 <td><img src="gifs/spiderMan.gif"/></td>
