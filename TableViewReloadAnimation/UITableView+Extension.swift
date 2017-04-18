@@ -4,6 +4,8 @@ import UIKit
 extension UITableView {
     
     typealias Complition = (() -> Void)
+    typealias HeaderFooterTuple = (header: UIView?, footer: UIView?)
+    typealias VisibleHeaderFooter = [Int: HeaderFooterTuple]
     
     enum AnimationType {
         case simple(duration: TimeInterval, direction: Direction, constantDelay: TimeInterval)
@@ -29,10 +31,30 @@ extension UITableView {
                 constantDelay = _constantDelay
             }
             
-            let visibleCells = tableView.visibleCells
-            let visibleCellsCount = Double(visibleCells.count)
+            let _ = tableView.visibleCells
+            let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows
+            let grouped = indexPathsForVisibleRows?.grouped(by: { (indexPath: IndexPath) -> Int in
+                return indexPath.section
+            }).sorted(by: { $0.key < $1.key })
             
-            let cells = direction.reverse(for: reversed ? visibleCells.reversed() : visibleCells)
+            let visibleHeaderFooter = tableView.visibleSectionIndexes()
+            var visibleViews = [UIView]()
+            
+            for items in grouped! {
+                var currentViews: [UIView] = items.value.flatMap { tableView.cellForRow(at: $0) }
+                if let header = visibleHeaderFooter[items.key]?.header {
+                    currentViews.insert(header, at: 0)
+                }
+                
+                if let footer = visibleHeaderFooter[items.key]?.footer {
+                    currentViews.append(footer)
+                }
+                
+                visibleViews += currentViews
+            }
+            
+            let visibleCellsCount = Double(visibleViews.count)
+            let cells = direction.reverse(for: reversed ? visibleViews.reversed() : visibleViews)
             cells.enumerated().forEach { item in
                 let delay: TimeInterval = duration / visibleCellsCount * Double(item.offset) + Double(item.offset) * constantDelay
                 direction.startValues(tableView: tableView, for: item.element)
@@ -51,7 +73,7 @@ extension UITableView {
                     completion?()
                 })
                 
-                print(duration, delay)
+//                print(duration, delay)
             }
 
         }
@@ -64,7 +86,6 @@ extension UITableView {
         case bottom(useCellsFrame: Bool)
         case rotation(angle: Double)
         case rotation3D(type: TransformType)
-        
         
         // For testing only
         init?(rawValue: Int, useCellsFrame: Bool) {
@@ -84,7 +105,7 @@ extension UITableView {
             }
         }
         
-        func startValues(tableView: UITableView, for cell: UITableViewCell) {
+        func startValues(tableView: UITableView, for cell: UIView) {
             cell.alpha = 0
             switch self {
             case .left(let useCellsFrame):
@@ -102,7 +123,7 @@ extension UITableView {
             }
         }
         
-        func endValues(tableView: UITableView, for cell: UITableViewCell) {
+        func endValues(tableView: UITableView, for cell: UIView) {
             cell.alpha = 1
             switch self {
             case .left(let useCellsFrame):
@@ -120,7 +141,7 @@ extension UITableView {
             }
         }
         
-        func reverse(for cells: [UITableViewCell]) -> [UITableViewCell] {
+        func reverse(for cells: [UIView]) -> [UIView] {
             switch self {
             case .bottom(_):
                 return cells.reversed()
@@ -139,7 +160,7 @@ extension UITableView {
             case deadpool
             case doctorStrange
             
-            func set(for cell: UITableViewCell) {
+            func set(for cell: UIView) {
                 let oldFrame = cell.frame
                 var transform = CATransform3DIdentity
                 transform.m34 = 1.0 / -500
@@ -180,6 +201,40 @@ extension UITableView {
     func reloadData(with animation: AnimationType, reversed: Bool = false, completion: Complition? = nil) {
         reloadData()
         animation.animate(tableView: self, reversed: reversed, completion: completion)
+    }
+}
+
+extension UITableView {
+    fileprivate func visibleSectionIndexes() -> VisibleHeaderFooter {
+        let visibleTableViewRect = CGRect(x: contentOffset.x, y: contentOffset.y, width: bounds.size.width, height: bounds.size.height)
+        
+        var visibleHeaderFooter: VisibleHeaderFooter = [:]
+        (0..<numberOfSections).forEach {
+            let headerRect = rectForHeader(inSection: $0)
+            let footerRect = rectForFooter(inSection: $0)
+            
+            let header: UIView? = visibleTableViewRect.intersects(headerRect) ? headerView(forSection: $0) : nil
+            let footer: UIView? = visibleTableViewRect.intersects(footerRect) ? footerView(forSection: $0) : nil
+            
+            let headerFooterTuple: HeaderFooterTuple = (header: header, footer: footer)
+            visibleHeaderFooter[$0] = headerFooterTuple
+        }
+        
+        return visibleHeaderFooter
+    }
+}
+
+extension Array {
+    fileprivate func grouped<T>(by criteria: (Element) -> T) -> [T: [Element]] {
+        var groups = [T: [Element]]()
+        for element in self {
+            let key = criteria(element)
+            if groups.keys.contains(key) == false {
+                groups[key] = [Element]()
+            }
+            groups[key]?.append(element)
+        }
+        return groups
     }
 }
 
