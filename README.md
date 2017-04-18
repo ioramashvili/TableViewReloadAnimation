@@ -38,17 +38,39 @@
 </tr>
 </table>
 
-## Example
-
-Download project and play
-
 ## Requirements
 
 - iOS 9.0+
 
-## Usage
+## Installation
 
-drag UITableView+Extension.swift in your project and vualia
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate TableViewReloadAnimation into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'TableViewReloadAnimation', '~> 0.0.3'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+## Usage
 
 ```swift
 // left animation
