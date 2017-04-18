@@ -11,7 +11,7 @@ public extension UITableView {
         case simple(duration: TimeInterval, direction: Direction, constantDelay: TimeInterval)
         case spring(duration: TimeInterval, damping: CGFloat, velocity: CGFloat, direction: Direction, constantDelay: TimeInterval)
         
-        func animate(tableView: UITableView, reversed: Bool = false, completion: Complition? = nil) {
+        public func animate(tableView: UITableView, reversed: Bool = false, completion: Complition? = nil) {
             var duration: TimeInterval!
             var damping: CGFloat = 1
             var velocity: CGFloat = 0
