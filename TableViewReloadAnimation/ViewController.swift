@@ -5,10 +5,8 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var directionStackView: UIStackView!
     @IBOutlet var cellsOrderSwitch: UISwitch!
-    
     var selectedDirection1: UITableView.Direction!
     var selectedDirection2: UITableView.Direction!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
