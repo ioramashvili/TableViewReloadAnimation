@@ -76,6 +76,7 @@ $ pod install
 import TableViewReloadAnimation
 
 ```
+in viewDidAppear
 
 ```swift
 // left animation
