@@ -60,7 +60,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'TableViewReloadAnimation', '~> 0.0.4'
+    pod 'TableViewReloadAnimation', '~> 0.0.5'
 end
 ```
 
