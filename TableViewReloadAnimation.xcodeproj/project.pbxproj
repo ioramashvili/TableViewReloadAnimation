@@ -16,6 +16,7 @@
 		430E21E01EA10BB000990711 /* TableViewReloadAnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E21DF1EA10BB000990711 /* TableViewReloadAnimationUITests.swift */; };
 		430E21EE1EA10CD800990711 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E21ED1EA10CD800990711 /* CustomCell.swift */; };
 		430E21F01EA10DE300990711 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E21EF1EA10DE300990711 /* UITableView+Extension.swift */; };
+		432C4F781EA61FC200D96DEB /* TableViewReloadAnimation.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 432C4F771EA61FC200D96DEB /* TableViewReloadAnimation.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		430E21E11EA10BB000990711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		430E21ED1EA10CD800990711 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		430E21EF1EA10DE300990711 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		432C4F771EA61FC200D96DEB /* TableViewReloadAnimation.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TableViewReloadAnimation.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		430E21B31EA10BAF00990711 = {
 			isa = PBXGroup;
 			children = (
+				432C4F771EA61FC200D96DEB /* TableViewReloadAnimation.podspec */,
 				430E21BE1EA10BB000990711 /* TableViewReloadAnimation */,
 				430E21D31EA10BB000990711 /* TableViewReloadAnimationTests */,
 				430E21DE1EA10BB000990711 /* TableViewReloadAnimationUITests */,
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432C4F781EA61FC200D96DEB /* TableViewReloadAnimation.podspec in Resources */,
 				430E21CA1EA10BB000990711 /* LaunchScreen.storyboard in Resources */,
 				430E21C71EA10BB000990711 /* Assets.xcassets in Resources */,
 				430E21C51EA10BB000990711 /* Main.storyboard in Resources */,
@@ -526,6 +530,7 @@
 				430E21E61EA10BB000990711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		430E21E71EA10BB000990711 /* Build configuration list for PBXNativeTarget "TableViewReloadAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +539,7 @@
 				430E21E91EA10BB000990711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		430E21EA1EA10BB000990711 /* Build configuration list for PBXNativeTarget "TableViewReloadAnimationUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +548,7 @@
 				430E21EC1EA10BB000990711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
