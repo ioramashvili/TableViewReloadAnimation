@@ -48,6 +48,8 @@ Download project and play
 
 ## Usage
 
+drag UITableView+Extension.swift in your project and vualia
+
 ```swift
 // left animation
 tableView.reloadData(
